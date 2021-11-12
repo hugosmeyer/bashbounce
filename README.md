@@ -6,3 +6,5 @@ This bounces an "O" over the screen, if you specify another character as $1 if w
 It will adapt automatically to screen size changes
 
 Cursor is suppressed
+
+You will need to have usleep installed or deal with 1 second delays
