@@ -7,9 +7,9 @@ trap update_size WINCH
 function mssleep() {
         pms=`date +%s%N | cut -c1-13`
         stop=$((pms+mssleep))
-        while [ `date +%s%N | cut -c1-13` -lt $stop ] 
+        while [ $pms -le $stop ] 
         do
-        v=$((v+1))
+                pms=`date +%s%N | cut -c1-13`
         done
 }
 
@@ -21,6 +21,8 @@ function update_size() {
  
 function ctrl_c() {
         exitnow="Y"
+        pms=$stop
+
 }
 mssleep=100 && [ ! -z $2 ] && mssleep=$2
 exitnow="N"
