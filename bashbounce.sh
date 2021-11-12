@@ -33,6 +33,6 @@ do
         [ $x -ge $maxx ] && x=$maxx
         [ $y -ge $maxy ] && y=$maxy
         [ $exitnow == "Y" ] && break
-        usleep 100000
+        sleep 1
 done
 tput cvvis
