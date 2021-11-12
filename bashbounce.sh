@@ -22,8 +22,8 @@ tput civis
 update_size
 while [ 1 ] 
 do
-        tput cup 5 5 && echo "x: $x/$maxx"
-        tput cup 6 5 && echo "iy:$y/$maxy"
+        #tput cup 5 5 && echo "x: $x/$maxx"
+        #tput cup 6 5 && echo "iy:$y/$maxy"
         tput cup $y $x && echo " "
         x=$((x+dx))
         y=$((y+dy))
