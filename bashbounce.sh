@@ -24,6 +24,7 @@ function ctrl_c() {
         pms=$stop
 
 }
+
 mssleep=100 && [ ! -z $2 ] && mssleep=$2
 exitnow="N"
 C="O" && [ ! -z $1 ] && C=$1
@@ -31,7 +32,7 @@ x=0 && y=0
 dx=1 && dy=1
 tput civis
 update_size
-while [ 1 ] 
+while [ $exitnow == "N" ] 
 do
          tput cup $y $x && echo " "
         x=$((x+dx))
@@ -41,7 +42,7 @@ do
         [ $y -ge $maxy -o $y -le 0 ] && dy=$((-1*dy))
         [ $x -ge $maxx ] && x=$maxx
         [ $y -ge $maxy ] && y=$maxy
-        [ $exitnow == "Y" ] && break
         mssleep 
 done
 tput cvvis
+clear
