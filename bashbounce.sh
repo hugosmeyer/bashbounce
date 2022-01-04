@@ -14,9 +14,9 @@ function mssleep() {
 }
 
 function update_size() {
-        clear
         maxx=$((`stty size | awk '{print $2}'` - 1))
         maxy=$((`stty size | awk '{print $1}'` - 2))
+        clear
 }
  
 function ctrl_c() {
